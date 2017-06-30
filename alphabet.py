@@ -2,7 +2,7 @@ class Alphabet:
     """Cyclic iterable class, that represents alphabet."""
 
     def __init__(self, start, end):
-        """Alphabet is represented by the bounds of characters ASCII codes,
+        """Alphabet represented by the bounds of characters ASCII codes,
         not the sequences of characters:
         start - alphabet first character
         end - alphabet last character
@@ -23,12 +23,3 @@ class Alphabet:
 
     def __getitem__(self, item):
         return chr(self.codes[item%len(self.codes)])
-
-
-if __name__=="__main__":
-    alph = Alphabet("a", "z")
-    print(alph.get_all_characters())
-    print(alph.shift("a", 2))
-    print(alph.shift("y", 4))
-    print(alph.shift("b", -2))
-    print(alph[0])
