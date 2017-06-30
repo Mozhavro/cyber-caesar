@@ -68,6 +68,14 @@ class CesarCipherTest(unittest.TestCase):
 
         self.assertEqual(original_text, decrypted)
 
+    def test_encrypt_invalid_rotation_key(self):
+        with self.assertRaises(ValueError):
+            encrypted = cesar_cipher.encrypt('sdfds', 'sdfsdf')
+
+    def test_encrypt_invalid_rotation_key2(self):
+        with self.assertRaises(ValueError):
+            encrypted = cesar_cipher.encrypt('sdfds', 1.23)
+
 
 if __name__=="__main__":
     unittest.main()

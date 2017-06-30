@@ -31,7 +31,3 @@ def decrypt(text, key):
         raise ValueError
 
     return encrypt(text, -key)
-
-
-if __name__=="__main__":
-    print(encrypt("sdf323fsfdASDF xxx dfs sdf", 3))
