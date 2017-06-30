@@ -1,5 +1,5 @@
 from unittest import TestCase
-from .cipher_cesar import CesarCipher
+import cesar_cipher
 
 
 class CesarCipherTest(TestCase):
@@ -8,7 +8,7 @@ class CesarCipherTest(TestCase):
         text = "abc"
         rotate = 1
 
-        encrypted = CesarCipher.encrypt(text, rotate)
+        encrypted = cesar_cipher.encrypt(text, rotate)
         self.assertEqual(encrypted, "bcd")
 
     def test_encrypt_cyclic(self):
@@ -16,7 +16,7 @@ class CesarCipherTest(TestCase):
         text = "abcz"
         rotate  = 1
 
-        encrypted = CesarCipher.encrypt(text, rotate)
+        encrypted = cesar_cipher.encrypt(text, rotate)
         self.assertEqual(encrypted, "bcda")
 
     def test_encrypt_negative_rotate(self):
@@ -24,7 +24,7 @@ class CesarCipherTest(TestCase):
         text = "bcz"
         rotate  = -1
 
-        encrypted = CesarCipher.encrypt(text, rotate)
+        encrypted = cesar_cipher.encrypt(text, rotate)
         self.assertEqual(encrypted, "aby")
 
     def test_encrypt_negative_rotate_cyclic(self):
@@ -32,7 +32,7 @@ class CesarCipherTest(TestCase):
         text = "abcz"
         rotate  = -1
 
-        encrypted = CesarCipher.encrypt(text, rotate)
+        encrypted = cesar_cipher.encrypt(text, rotate)
         self.assertEqual(encrypted, "zaby")
 
     def test_encrypt_text_with_whitespaces(self):
@@ -40,7 +40,7 @@ class CesarCipherTest(TestCase):
         text = "abc bcd zzz"
         rotate = 1
 
-        encrypted = CesarCipher.encrypt(text, rotate)
+        encrypted = cesar_cipher.encrypt(text, rotate)
         self.assertEqual(encrypted, "bcd cde aaa")
 
     def test_decrypt(self):
@@ -48,21 +48,21 @@ class CesarCipherTest(TestCase):
         text = "bcd"
         rotate = 1
 
-        encrypted = CesarCipher.decrypt(text, rotate)
+        encrypted = cesar_cipher.decrypt(text, rotate)
         self.assertEqual(encrypted, "abc")
 
     def test_characters_validation(self):
         """Everything except alphabetical characters and whitespaces is invalid"""
         invalid_input = "fnds323254s"
         with self.assertRaises(ValueError):
-            rotated = CesarCipher(invalid_input, 1)
+            rotated = cesar_cipher(invalid_input, 1)
 
     def test_sanity(self):
         """Encryption + decription should keep the original text"""
         original_text = "bcd"
         rotate = 1
 
-        encrypted = CesarCipher.encrypt(original_text, rotate)
-        decrypted = CesarCipher.decrypt(encrypted, rotate)
+        encrypted = cesar_cipher.encrypt(original_text, rotate)
+        decrypted = cesar_cipher.decrypt(encrypted, rotate)
 
         self.assertEqual(original_text, decrypted)
