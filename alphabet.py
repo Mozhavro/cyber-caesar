@@ -15,11 +15,18 @@ class Alphabet:
         return "".join([chr(code) for code in self.codes])
 
     def shift(self, char, shift):
-        """Returns character with index of original character index + shift"""
-        original_char_code = ord(char)
-        original_index = self.codes.index(original_char_code)
-        shifted_index = (original_index + shift) % len(self.codes)
-        return chr(self.codes[shifted_index])
+        """If character is in alphabet, returns character with index of
+        original character index + shift, otherwise, returns original one."""
+        if self.is_char_in_alphabet(char):
+            original_char_code = ord(char)
+            original_index = self.codes.index(original_char_code)
+            shifted_index = (original_index + shift) % len(self.codes)
+            return chr(self.codes[shifted_index])
+
+        return None
+
+    def is_char_in_alphabet(self, char):
+        return self.start <= ord(char) <= self.end
 
     def __getitem__(self, item):
         return chr(self.codes[item%len(self.codes)])

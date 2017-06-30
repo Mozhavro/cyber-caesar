@@ -1,8 +1,8 @@
-from unittest import TestCase
+import unittest
 import cesar_cipher
 
 
-class CesarCipherTest(TestCase):
+class CesarCipherTest(unittest.TestCase):
 
     def test_encrypt(self):
         text = "abc"
@@ -51,11 +51,12 @@ class CesarCipherTest(TestCase):
         encrypted = cesar_cipher.decrypt(text, rotate)
         self.assertEqual(encrypted, "abc")
 
+    @unittest.skip
     def test_characters_validation(self):
         """Everything except alphabetical characters and whitespaces is invalid"""
         invalid_input = "fnds323254s"
         with self.assertRaises(ValueError):
-            rotated = cesar_cipher(invalid_input, 1)
+            rotated = cesar_cipher.encrypt(invalid_input, 1)
 
     def test_sanity(self):
         """Encryption + decription should keep the original text"""
@@ -66,3 +67,7 @@ class CesarCipherTest(TestCase):
         decrypted = cesar_cipher.decrypt(encrypted, rotate)
 
         self.assertEqual(original_text, decrypted)
+
+
+if __name__=="__main__":
+    unittest.main()
