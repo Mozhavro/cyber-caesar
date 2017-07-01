@@ -16,7 +16,7 @@ class Alphabet:
 
     def shift(self, char, shift):
         """If character is in alphabet, returns character with index of
-        original character index + shift, otherwise, returns original one."""
+        original character index + shift, otherwise, returns original None."""
         if self.is_char_in_alphabet(char):
             original_char_code = ord(char)
             original_index = self.codes.index(original_char_code)

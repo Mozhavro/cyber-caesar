@@ -1,4 +1,4 @@
-from alphabet import Alphabet
+from .alphabet import Alphabet
 
 allowed_alphabets = (
     Alphabet("a", "z"),
