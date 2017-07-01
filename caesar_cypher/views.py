@@ -8,8 +8,8 @@ def index(request):
 
 
 def encrypt(request):
-    original_text = request.POST.get('original_text', None)
-    rotation = int(request.POST.get('rotation', 0))
+    original_text = request.GET.get('original_text', None)
+    rotation = int(request.GET.get('rotation', 0))
 
     if original_text:
         encrypted = caesar_cipher.encrypt(original_text, rotation)
@@ -17,8 +17,8 @@ def encrypt(request):
 
 
 def decrypt(request):
-    encrypted_text = request.POST.get('encrypted_text', None)
-    rotation = int(request.POST.get('rotation', 0))
+    encrypted_text = request.GET.get('encrypted_text', None)
+    rotation = int(request.GET.get('rotation', 0))
 
     if encrypted_text:
         decrypted = caesar_cipher.decrypt(encrypted_text, rotation)
