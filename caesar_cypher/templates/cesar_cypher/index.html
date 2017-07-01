@@ -8,11 +8,14 @@
 
     <div class="page-content">
         <form class="encryption-form">
+            {% csrf_token %}
+
             <textarea
                 name="original_text"
                 id="original_text"
                 cols="30"
-                rows="10"></textarea>
+                rows="10"
+                autofocus="autofocus" ></textarea>
 
             <div class="controls">
                 <label for="rotation">Rotation:</label>
