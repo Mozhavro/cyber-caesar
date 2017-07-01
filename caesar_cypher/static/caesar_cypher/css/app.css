@@ -1,0 +1,144 @@
+body {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.page-heading {
+    margin-bottom: 36px;
+}
+
+.page-title {
+    letter-spacing: 0.3em;
+    font-weight: 300;
+    color: #3d3d3d;
+    text-transform: uppercase;
+    font-size: 36px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid black;
+    margin-bottom: 6px;
+}
+@media (max-width: 460px)  {
+    .page-title {
+        font-size: 24px;
+    }
+}
+
+.page-subtitle {
+    margin-top: 4px;
+    color: #696969;
+    font-weight: 400;
+    text-align: right;
+}
+
+@media (min-width: 681px) {
+    .encryption-form {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+        align-content: stretch;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;;
+    }
+}
+
+.encryption-form >* {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media (max-width: 680px) {
+    .encryption-form >* {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+.encryption-form .controls {
+    display: inline-block;
+    max-width: 140px;
+    width: 100%;
+    white-space: nowrap;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@media (min-width: 681px) {
+    .encryption-form .controls {
+        padding: 0 10px;
+    }
+}
+@media (max-width: 680px) {
+    .encryption-form .controls {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.encryption-form textarea {
+    resize: none;
+    font-family: 'Share Tech Mono', monospace;
+    padding: 10px;
+}
+
+.encryption-form .controls >* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.encryption-form .controls input {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    padding: 6px;
+}
+
+.encryption-form .controls button {
+    display: inline-block;
+    white-space: normal;
+    width: 48%;
+    margin: 0;
+    margin-right: -4px;
+    padding: 6px;
+    text-align: center;
+    background: #3d3d3d;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.62);
+    -moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.62);
+    box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.62);
+}
+
+@media(max-width: 680px) {
+    .encryption-form .btn span {
+        display: inline-block;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}

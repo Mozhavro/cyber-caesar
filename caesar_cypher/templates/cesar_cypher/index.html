@@ -1,5 +1,32 @@
 {% extends "base.html"  %}
 
 {% block content %}
-    <h2>Ave, Caesar, morituri te salutant</h2>
+    <div class="page-heading">
+        <h1 class="page-title">Cyber Caesar</h1>
+        <h3 class="page-subtitle">I came, I saw, I've encrypted</h3>
+    </div>
+
+    <div class="page-content">
+        <form class="encryption-form">
+            <textarea
+                name="original_text"
+                id="original_text"
+                cols="30"
+                rows="10"></textarea>
+
+            <div class="controls">
+                <label for="rotation">Rotation:</label>
+                <input type="number" name="rotation" id="rotation" value="1">
+                <button id="decrypt" class="btn decrypt-btn" title="decrytp"><span class="arrow-left"><</span></button>
+                <button id="encrypt" class="btn encrypt-btn" title="encrypt"><span class="arrow-right">></span></button>
+            </div>
+
+            <textarea
+                name="encrypted_text"
+                id="encrypted_text"
+                cols="30"
+                rows="10"></textarea>
+        </form>
+    </div>
+
 {% endblock %}

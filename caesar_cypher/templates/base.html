@@ -1,8 +1,13 @@
+{% load staticfiles %}
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}C Y B E R C A E S A R{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'caesar_cypher/css/app.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
 </head>
 <body>
     <div class="container">
