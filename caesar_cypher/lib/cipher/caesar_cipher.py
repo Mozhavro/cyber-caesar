@@ -1,33 +1,35 @@
 from .alphabet import Alphabet
-
-allowed_alphabets = (
-    Alphabet("a", "z"),
-    Alphabet("A", "Z")
-)
+from . import caesar_default_config
 
 
-def encrypt(text, rotate):
-    if not isinstance(rotate, int):
-        raise ValueError
+class CaesarCipher:
 
-    result = ''
-    for char in text:
-        shifted = None
-        for alpha in allowed_alphabets:
+    def __init__(self, allowed_alphabets=None):
+        # TODO: protect from unexpected format: raise ValueError if not collection of alphabets
+        self.allowed_alphabets = allowed_alphabets or caesar_default_config.allowed_alphabets
+
+    def encrypt(self, text, rotate):
+        if not isinstance(rotate, int):
+            raise ValueError
+
+        result = ''
+        for char in text:
+            shifted = None
+            for alpha in self.allowed_alphabets:
+                if shifted:
+                    break
+                shifted = alpha.shift(char, rotate)
+
             if shifted:
-                break
-            shifted = alpha.shift(char, rotate)
+                result = result + shifted
+            else:
+                result = result + char
 
-        if shifted:
-            result = result + shifted
-        else:
-            result = result + char
-
-    return result
+        return result
 
 
-def decrypt(text, key):
-    if not isinstance(key, int):
-        raise ValueError
+    def decrypt(self, text, key):
+        if not isinstance(key, int):
+            raise ValueError
 
-    return encrypt(text, -key)
+        return self.encrypt(text, -key)
