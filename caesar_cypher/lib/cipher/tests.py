@@ -63,15 +63,6 @@ class CesarCipherTest(unittest.TestCase):
         encrypted = caesar.decrypt(text, rotate)
         self.assertEqual(encrypted, "abc")
 
-    @unittest.skip
-    def test_characters_validation(self):
-        """Everything except alphabetical characters and whitespaces is invalid"""
-        caesar = CaesarCipher()
-
-        invalid_input = "fnds323254s"
-        with self.assertRaises(ValueError):
-            rotated = caesar.encrypt(invalid_input, 1)
-
     def test_sanity(self):
         """Encryption + decription should keep the original text"""
         caesar = CaesarCipher()
