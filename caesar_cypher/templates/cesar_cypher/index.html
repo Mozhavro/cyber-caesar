@@ -28,7 +28,15 @@
                 id="encrypted_text"
                 cols="30"
                 rows="10"></textarea>
+
         </form>
+
+        <a href="#" class="break">Guess key</a>
+
+        <div id="break_result" class="message-box hidden">
+            <p><strong>Rotation key:</strong> <span class="key"></span></p>
+            <p><strong>Decrypted text:</strong> <span class="text"></span></p>
+        </div>
     </div>
 
 {% endblock %}

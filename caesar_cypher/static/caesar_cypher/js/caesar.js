@@ -24,4 +24,21 @@
         });
     });
 
+    $('.break').on('click', function (e) {
+        e.preventDefault();
+        $.get("/break-cipher/",
+        {
+            text: $("#encrypted_text").val(),
+        },
+        function(data, status){
+            var resultBox = $('#break_result');
+            var keyBox = resultBox.find('.key');
+            var textBox = resultBox.find('.text');
+            
+            keyBox.text(data.key);
+            textBox.text(data.decrypted);
+            resultBox.removeClass('hidden');
+        });
+    });
+
 })( jQuery );

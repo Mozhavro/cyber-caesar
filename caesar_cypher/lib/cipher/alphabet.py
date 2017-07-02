@@ -10,6 +10,7 @@ class Alphabet:
         self.start = ord(start)
         self.end = ord(end)
         self.codes = tuple(range(self.start, self.end+1))
+        self.length = self.count_characters() + 1
 
     def get_all_characters(self):
         return "".join([chr(code) for code in self.codes])
@@ -27,6 +28,17 @@ class Alphabet:
 
     def is_char_in_alphabet(self, char):
         return self.start <= ord(char) <= self.end
+
+    def get_character_position(self, char):
+        alphabet = self.get_all_characters()
+        try:
+            position = alphabet.index(char)
+            return alphabet.index(char)
+        except ValueError:
+            return None
+
+    def count_characters(self):
+        return self.end - self.start
 
     def __getitem__(self, item):
         return chr(self.codes[item%len(self.codes)])

@@ -18,15 +18,15 @@ class CesarCipherTest(unittest.TestCase):
         caesar = CaesarCipher()
 
         text = "abcz"
-        rotate  = 1
+        rotate = 1
 
         encrypted = caesar.encrypt(text, rotate)
         self.assertEqual(encrypted, "bcda")
 
     def test_encrypt_negative_rotate(self):
+        """Shift back"""
         caesar = CaesarCipher()
 
-        """Shift back"""
         text = "bcz"
         rotate  = -1
 
@@ -38,7 +38,7 @@ class CesarCipherTest(unittest.TestCase):
         caesar = CaesarCipher()
 
         text = "abcz"
-        rotate  = -1
+        rotate = -1
 
         encrypted = caesar.encrypt(text, rotate)
         self.assertEqual(encrypted, "zaby")
