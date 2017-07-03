@@ -25,7 +25,9 @@ SECRET_KEY = '7tp0jf*fnp)$8*au3-o&tp0hycjhtnt*+k7-jlw%o7-n@=3!_v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'cybercaesar.herokuapp.com'
+]
 
 
 # Application definition
