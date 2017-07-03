@@ -41,4 +41,15 @@
         });
     });
 
+    $('#help_link').on('click', function (e) {
+        e.preventDefault();
+
+        $('#modal_backdrop').fadeIn(300);
+        $('#modal_help').fadeIn(300);
+    });
+
+    $('#modal_backdrop').on('click', function () {
+        $('.modal').fadeOut(300);
+        $(this).fadeOut(300);
+    });
 })( jQuery );

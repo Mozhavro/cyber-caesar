@@ -10,7 +10,7 @@ from . import config
 
 
 def index(request):
-    return render(request, "cesar_cypher/index.html")
+    return render(request, "caesar_cypher/index.html")
 
 
 def encrypt(request):
