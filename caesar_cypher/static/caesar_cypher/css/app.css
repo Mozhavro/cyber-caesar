@@ -168,6 +168,10 @@ a {
     margin: 0;
 }
 
+.actions-bar {
+    min-height: 20px;
+}
+
 a.break {
     float: right;
     margin: 2px 6px;
