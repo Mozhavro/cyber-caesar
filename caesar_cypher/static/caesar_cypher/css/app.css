@@ -167,6 +167,13 @@ a {
 .message-box p:last-child {
     margin: 0;
 }
+.message-box .text{
+    display: block;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
 
 .actions-bar {
     min-height: 20px;
