@@ -1,3 +1,19 @@
 # C Y B E R C A E S A R
 
-I came, I saw, I encrypted
+Ave!
+
+Heard of Caesar cipher?
+
+It's a simple shift cipher. Just choose the rotation key, and every letter will be cyclically sifted of it's value.
+
+This is an online caesar cipher encryption tool. Using it, you can encrypt, decrypt and even try to break the cipher!
+
+### Installation
+
+1. Install dependencies using
+```
+pip install -r requirements.txt
+```
+2. python manage.py collectstatic
+
+3. Run the server using django built-in server or using heroku (already configured with gunicorn)
