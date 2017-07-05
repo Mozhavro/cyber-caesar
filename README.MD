@@ -14,6 +14,9 @@ This is an online caesar cipher encryption tool. Using it, you can encrypt, decr
 ```
 pip install -r requirements.txt
 ```
-2. python manage.py collectstatic
+2. Deploy static files
+```
+python manage.py collectstatic
+```
 
 3. Run the server using django built-in server or using heroku (already configured with gunicorn)
